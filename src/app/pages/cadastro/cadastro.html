@@ -1,1 +1,21 @@
-<p>cadastro works!</p>
+<div class="login bg-image">
+  <div class="bg container-login">
+    <div class="center">
+      <h2 style="margin-bottom: 0">FAÇA O CADASTRO DA BIBLIOTECA VIRTUAL</h2>
+      <h2>CADASTRO</h2>
+    </div>
+    <div class="input-wrapper">
+      <input type="text" placeholder="Nome" name="usuario" class="input" />
+    </div>
+    <div class="input-wrapper">
+      <input type="text" placeholder="Usuário" name="usuario" class="input" />
+    </div>
+    <div class="input-wrapper">
+      <input type="password" placeholder="Senha" name="senha" class="input" />
+    </div>
+    <div class="button-div">
+      <button mat-raised-button>CADASTRAR</button>
+      <button mat-raised-button (click)="login()">LOGIN</button>
+    </div>
+  </div>
+</div>
