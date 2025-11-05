@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.bg {
+  background: #034cac;
+  background: linear-gradient(180deg, rgba(3, 76, 172, 1) 38%, rgba(8, 102, 225, 1) 100%);
+  width: 700px;
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bg-image {
+  background-image: url('assets/image/bg.png');
+  background-size: cover; /* faz a imagem cobrir todo o elemento */
+  background-position: center; /* centraliza a imagem */
+  background-repeat: no-repeat;
+}
+
+.input-wrapper input {
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 13em;
+  border-radius: 1rem;
+  color: rgb(45, 5, 121);
+  box-shadow: 0 0.3rem #a1a0a0a5;
+  cursor: pointer;
+}
+
+.input-wrapper input:focus {
+  outline-color: rgb(45, 5, 121);
+}
