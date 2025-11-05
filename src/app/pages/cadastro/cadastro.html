@@ -5,16 +5,34 @@
       <h2>CADASTRO</h2>
     </div>
     <div class="input-wrapper">
-      <input type="text" placeholder="Nome" name="usuario" class="input" />
+      <input
+        type="text"
+        placeholder="Nome"
+        name="usuario"
+        class="input"
+        [(ngModel)]="cadastro.nome"
+      />
     </div>
     <div class="input-wrapper">
-      <input type="text" placeholder="Usuário" name="usuario" class="input" />
+      <input
+        type="text"
+        placeholder="Usuário"
+        name="usuario"
+        class="input"
+        [(ngModel)]="cadastro.usuario"
+      />
     </div>
     <div class="input-wrapper">
-      <input type="password" placeholder="Senha" name="senha" class="input" />
+      <input
+        type="password"
+        placeholder="Senha"
+        name="senha"
+        class="input"
+        [(ngModel)]="cadastro.senha"
+      />
     </div>
     <div class="button-div">
-      <button mat-raised-button>CADASTRAR</button>
+      <button mat-raised-button (click)="cadastrar()">CADASTRAR</button>
       <button mat-raised-button (click)="login()">LOGIN</button>
     </div>
   </div>

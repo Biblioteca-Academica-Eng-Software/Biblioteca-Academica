@@ -5,10 +5,22 @@
       <h2>LOGIN</h2>
     </div>
     <div class="input-wrapper">
-      <input type="text" placeholder="Usuário" [(ngModel)]="usuario" name="usuario" class="input" />
+      <input
+        type="text"
+        placeholder="Usuário"
+        [(ngModel)]="user.usuario"
+        name="usuario"
+        class="input"
+      />
     </div>
     <div class="input-wrapper">
-      <input type="password" placeholder="Senha" [(ngModel)]="senha" name="senha" class="input" />
+      <input
+        type="password"
+        placeholder="Senha"
+        [(ngModel)]="user.senha"
+        name="senha"
+        class="input"
+      />
     </div>
     <div class="button-div">
       <button mat-raised-button (click)="login()">LOGIN</button>

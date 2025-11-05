@@ -12,6 +12,14 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
+  postLogin(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/auth/login`, user);
+  }
+
+  postCadastro(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
+  }
+
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
