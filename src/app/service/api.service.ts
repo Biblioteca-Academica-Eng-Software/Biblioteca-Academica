@@ -24,6 +24,15 @@ export class ApiService {
   getLivroById(id: number): Observable<BookCompleto> {
     return this.http.get<BookCompleto>(`${this.baseUrl}/books/${id}`);
   }
+
+  getMeusEmprestimos(): Observable<BookCompleto> {
+    return this.http.get<BookCompleto>(`${this.baseUrl}/reserva/me`);
+  }
+
+  reservar(id: number): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/reserva`, id);
+  }
+
   // postCadastro(user: User): Observable<User> {
   //   return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
   // }

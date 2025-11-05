@@ -37,8 +37,7 @@ export class Cadastro {
         this.login();
       },
       error: (err) => {
-        console.error('Erro ao criar usuário:', err);
-        alert('Falha ao criar usuário.');
+        alert(`Falha ao criar usuário. ${err.error.error}`);
       },
     });
   }

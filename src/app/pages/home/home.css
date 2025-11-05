@@ -129,6 +129,7 @@
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .book-card:hover {

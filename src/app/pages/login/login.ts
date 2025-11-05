@@ -31,7 +31,7 @@ export class Login {
         this.router.navigate(['/home']);
       },
       error: (err) => {
-        alert(`Falha ao logar usuário. ${err}`);
+        alert(`Falha ao logar usuário. ${err.error.error}`);
       },
     });
   }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Book, BookCompleto } from '../../models/book.model';
+import { ApiService } from '../../service/api.service';
 
 @Component({
   selector: 'app-modal-livros',
@@ -22,6 +23,8 @@ export class ModalLivros {
     descricao: '',
   };
 
+  constructor(private api: ApiService) {}
+
   resetarBook() {
     this.livro = {
       autor: '',
@@ -39,6 +42,18 @@ export class ModalLivros {
   open(livro: BookCompleto) {
     this.livro = livro;
     this.isOpen = true;
+  }
+
+  public reservar(id: number) {
+    this.api.reservar(id).subscribe({
+      next: (data) => {
+        alert(data);
+        console.log(data);
+      },
+      error: (err) => {
+        alert(`Falha ao logar usuário. ${err.error.error}`);
+      },
+    });
   }
 
   close() {

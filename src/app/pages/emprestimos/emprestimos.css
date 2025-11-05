@@ -1,0 +1,213 @@
+/* ===== HERO EMPRÉSTIMOS (Fundo Azul) ===== */
+.hero-emprestimos {
+  background-color: #0052cc;
+  color: white;
+  text-align: center;
+  padding: 50px 20px 250px;
+}
+
+.page-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+/* ===== CARDS DE EMPRÉSTIMO ===== */
+.loan-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 40px;
+  margin-top: -180px;
+  z-index: 50;
+  position: relative;
+}
+
+.loan-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 350px;
+}
+
+/* Estilo comum para os livros */
+.loan-info img {
+  width: 100px;
+  height: 150px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.loan-info h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.loan-info p {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Estilos Específicos do STATUS */
+/* CORREÇÃO: Unificação dos estilos de status */
+.status-section {
+  width: 100%;
+  padding: 20px 0 0 0;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 1. EM PERÍODO (Empréstimo Ativo) */
+.status-loan {
+  text-align: center;
+}
+
+.status-loan h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.status-loan .date {
+  font-size: 18px;
+  font-weight: 800;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.status-loan .period-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.btn-renovar {
+  background-color: #ddd;
+  border: none;
+  padding: 8px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.btn-renovar:hover {
+  background-color: #ccc;
+}
+
+/* 2. RESERVADO */
+.status-reserved,
+.status-late {
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 10px; /* Adiciona espaço entre a data e a barra de status */
+}
+
+.status-reserved {
+  background-color: #007bff;
+  color: white;
+}
+
+/* 3. ATRASADO */
+.status-late {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Estilos do Rodapé (Padrão) */
+footer {
+  margin-top: 150px;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+  color: #555;
+  background-color: #fff;
+}
+
+.footer-links {
+  display: flex;
+  gap: 50px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0052cc;
+}
+
+footer p {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.2s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .loan-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .loan-card {
+    max-width: 90%;
+  }
+
+  .hero-emprestimos {
+    padding-bottom: 50px;
+  }
+
+  .loan-container {
+    margin-top: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
