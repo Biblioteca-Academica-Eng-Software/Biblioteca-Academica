@@ -5,11 +5,12 @@ import { ApiService } from '../../service/api.service';
 import { User } from '../../models/user.model';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-cadastro',
   imports: [MatButton, FormsModule, HttpClientModule],
-  providers: [ApiService],
+  providers: [AuthService],
   templateUrl: './cadastro.html',
   styleUrl: './cadastro.css',
 })
@@ -22,14 +23,14 @@ export class Cadastro {
     senha: '',
   };
 
-  constructor(private router: Router, private api: ApiService) {}
+  constructor(private router: Router, private api: AuthService) {}
 
   public login() {
     this.router.navigate(['login']);
   }
 
   public cadastrar() {
-    this.api.postCadastro(this.cadastro).subscribe({
+    this.api.register(this.cadastro).subscribe({
       next: (data) => {
         console.log('Usuário criado:', data);
         alert('Usuário criado com sucesso!');

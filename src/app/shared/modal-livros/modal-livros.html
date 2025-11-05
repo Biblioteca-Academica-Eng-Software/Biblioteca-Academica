@@ -1,0 +1,39 @@
+@if (isOpen) {
+<div class="modal-backdrop" (click)="close()"></div>
+} @if (isOpen) {
+<div class="modal">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="card-livro">
+      <header class="card-header">Info Livros</header>
+      <div class="card-conteudo">
+        <div class="info-texto">
+          <h1 class="titulo-livro">Carreira Dev</h1>
+
+          <p class="sinopse">
+            {{ livro.descricao }}
+          </p>
+
+          <div class="detalhes">
+            <p><strong>Autor:</strong> {{ livro.autor }}</p>
+            <p><strong>Disciplina:</strong> {{ livro.disciplina }}</p>
+            <p><strong>Curso:</strong> {{ livro.curso }}</p>
+          </div>
+        </div>
+
+        <div class="info-imagem-acao">
+          <div class="imagem-container">
+            <img
+              src="placeholder-capa-carreira-dev.png"
+              alt="Capa do Livro Carreira Dev"
+              class="capa-livro"
+            />
+          </div>
+
+          <button class="botao-reservar">RESERVAR</button>
+          <p class="restantes">10 Restantes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

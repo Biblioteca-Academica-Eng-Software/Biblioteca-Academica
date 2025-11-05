@@ -3,40 +3,45 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { User } from '../models/user.model';
+import { Book } from '../models/book.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = environment.apiUrl; // ex: 'https://api.exemplo.com'
+  private baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
-  postLogin(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/auth/login`, user);
+  getTops(): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.baseUrl}/books/top`);
   }
 
-  postCadastro(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
+  getLivros(filtro: string): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.baseUrl}/books`, { params: { filtro: filtro } });
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users`);
-  }
+  // postCadastro(user: User): Observable<User> {
+  //   return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
+  // }
 
-  getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}/users/${id}`);
-  }
+  // getUsers(): Observable<User[]> {
+  //   return this.http.get<User[]>(`${this.baseUrl}/users`);
+  // }
 
-  createUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/users`, user);
-  }
+  // getUserById(id: number): Observable<User> {
+  //   return this.http.get<User>(`${this.baseUrl}/users/${id}`);
+  // }
 
-  updateUser(id: number, user: User): Observable<User> {
-    return this.http.put<User>(`${this.baseUrl}/users/${id}`, user);
-  }
+  // createUser(user: User): Observable<User> {
+  //   return this.http.post<User>(`${this.baseUrl}/users`, user);
+  // }
 
-  deleteUser(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/users/${id}`);
-  }
+  // updateUser(id: number, user: User): Observable<User> {
+  //   return this.http.put<User>(`${this.baseUrl}/users/${id}`, user);
+  // }
+
+  // deleteUser(id: number): Observable<void> {
+  //   return this.http.delete<void>(`${this.baseUrl}/users/${id}`);
+  // }
 }

@@ -7,18 +7,30 @@ import { Contato } from './pages/contato/contato';
 import { ListaLivros } from './pages/lista-livros/lista-livros';
 import { NgModule } from '@angular/core';
 import { authGuard } from './guards/auth.guard';
+import { PrivateLayout } from './layout/private/private';
+import { PublicLayout } from './layout/public/public';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: Login },
-  { path: 'cadastro', component: Cadastro },
-  { path: 'contato', component: Contato, canActivate: [authGuard] },
-  { path: 'emprestimos', component: Emprestimos, canActivate: [authGuard] },
-  { path: 'home', component: Home, canActivate: [authGuard] },
-  { path: 'lista-livros', component: ListaLivros, canActivate: [authGuard] },
-  //   { path: 'home', component: Home, canActivate: [AuthGuard] },
-  //   { path: 'emprestimos', component: Emprestimos, canActivate: [AuthGuard] },
-  { path: '**', component: Login },
+  {
+    path: '',
+    component: PublicLayout,
+    children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', component: Login },
+      { path: 'cadastro', component: Cadastro },
+    ],
+  },
+  {
+    path: '',
+    component: PrivateLayout,
+    children: [
+      { path: 'contato', component: Contato, canActivate: [authGuard] },
+      { path: 'emprestimos', component: Emprestimos, canActivate: [authGuard] },
+      { path: 'home', component: Home, canActivate: [authGuard] },
+      { path: 'lista-livros', component: ListaLivros, canActivate: [authGuard] },
+      { path: '**', component: Home },
+    ],
+  },
 ];
 
 @NgModule({
