@@ -1,1 +1,48 @@
-<p>lista-livros works!</p>
+<div class="book-overlay" id="bookOverlay">
+  <div class="info-livros-card">
+    <div class="book-overlay-close" id="closeOverlay">&times;</div>
+    <div class="info-text">
+      <div class="info-header">Informações do Livro</div>
+      <h2 id="overlayTitle">Título</h2>
+      <p class="info-description" id="overlayDescription">Descrição do livro.</p>
+      <div class="info-details">
+        <p>Autor: <span id="overlayAuthor"></span></p>
+        <p>Disciplina: <span id="overlayDiscipline"></span></p>
+      </div>
+    </div>
+    <div class="info-reserve">
+      <img id="overlayCover" src="" alt="Capa do livro" />
+      <button class="btn-reservar">RESERVAR</button>
+      <p class="reservas-count" id="overlayReservations"></p>
+    </div>
+  </div>
+</div>
+
+<section class="search-hero">
+  <h1 class="page-title">LISTA DE LIVROS</h1>
+  <div class="search-bar">
+    <input type="text" placeholder="Pesquisar..." />
+    <button>🔍</button>
+  </div>
+</section>
+
+<app-modal-livros #modalLivros title="Exemplo de Modal">
+  <p>Esse é o conteúdo do modal! 🎉</p>
+</app-modal-livros>
+
+<section class="book-results" id="bookResults">
+  @for (livro of livros; track $index) {
+  <div class="book-card" (click)="infoLivro(livro.id!)">
+    @if (livro.imagem) {
+    <div class="book-cover">
+      <img [src]="livro.imagem" [alt]="livro.titulo" />
+    </div>
+    }
+    <div class="book-info">
+      <h3>{{ livro.titulo }}</h3>
+      <p>{{ livro.autor }} - {{ livro.editora }} - {{ livro.disciplina }}</p>
+    </div>
+  </div>
+
+  }
+</section>

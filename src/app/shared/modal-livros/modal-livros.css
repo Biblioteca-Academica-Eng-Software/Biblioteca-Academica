@@ -1,0 +1,206 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 12px;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-footer {
+  border-top: 1px solid #eee;
+  border-bottom: none;
+  text-align: right;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Importar uma fonte similar à da imagem (como Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+/* Estilos de Reset e Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Cor de fundo escura conforme a imagem */
+  background-color: #282828;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container-externo {
+  /* Define a largura máxima do container para centralizar o card na tela */
+  width: 90%;
+  max-width: 1200px; /* Exemplo de largura máxima */
+}
+
+/* Estilo do Card Principal */
+.card-livro {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  overflow: hidden; /* Garante que nada saia do card */
+}
+
+/* Header do Card */
+.card-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 20px 40px 0;
+  color: #444; /* Cor de texto mais suave */
+}
+
+/* Conteúdo Principal (Texto + Imagem/Ação) */
+.card-conteudo {
+  display: flex;
+  padding: 40px;
+  gap: 40px; /* Espaço entre as duas colunas */
+}
+
+/* Coluna de Informação de Texto (Esquerda) */
+.info-texto {
+  flex: 2; /* Ocupa mais espaço que a coluna da direita */
+  max-width: 600px;
+}
+
+.titulo-livro {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.sinopse {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.detalhes p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.detalhes strong {
+  font-weight: 700;
+}
+
+/* Coluna de Imagem e Ação (Direita) */
+.info-imagem-acao {
+  flex: 1; /* Ocupa menos espaço */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Container para a Capa (com borda e sombra da capa real) */
+.imagem-container {
+  width: 100%;
+  max-width: 200px; /* Define um tamanho máximo para a capa */
+  /* Adicionar um background para o placeholder, se necessário */
+  background-color: #eee;
+  margin-bottom: 20px;
+}
+
+.capa-livro {
+  /* **ATENÇÃO:** O estilo da capa com o topo e base laranjas e a sombra será dado pela imagem real,
+       mas aqui está um placeholder para a área. */
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Ajuste para placeholder */
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  min-height: 300px;
+  content: url('https://via.placeholder.com/200x300?text=Capa+Livro'); /* Placeholder da capa */
+}
+
+.botao-reservar {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 30px; /* Botão arredondado */
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  /* Adicionar uma sombra interna sutil para simular o efeito do botão da imagem */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.botao-reservar:hover {
+  background-color: #ccc;
+}
+
+.restantes {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Media Query para Responsividade em Telas Menores */
+@media (max-width: 768px) {
+  .card-conteudo {
+    flex-direction: column; /* Colunas empilhadas em telas menores */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .info-texto {
+    max-width: 100%;
+  }
+
+  .titulo-livro {
+    font-size: 2rem;
+  }
+}

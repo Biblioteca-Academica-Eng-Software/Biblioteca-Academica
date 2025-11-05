@@ -1,0 +1,33 @@
+<header>
+  <img [src]="logoPath" alt="Logo FEI" />
+  <nav class="alinhamento-header">
+    @if (user?.adm) {
+    <a href="/admin">Admin</a>
+    }
+    <a href="/home">Home</a>
+    <a href="/lista-livros">Lista Livros</a>
+    <a href="/emprestimos">Meus Empréstimos</a>
+    <a href="/contato">Contate-nos</a>
+    <p>Olá, {{ user?.nome }}</p>
+    <button class="btn-sair" (click)="sair()">Sair</button>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <div>
+    <h4>Use cases</h4>
+    <p>UI design</p>
+  </div>
+  <div>
+    <h4>Explore</h4>
+    <p>Design</p>
+  </div>
+  <div class="social-icons">
+    <a href="https://youtube.com" target="_blank"><img src="" alt="YouTube" /></a>
+    <a href="https://instagram.com" target="_blank"><img src="" alt="Instagram" /></a>
+    <a href="https://linkedin.com" target="_blank"><img src="" alt="LinkedIn" /></a>
+    <a href="https://x.com" target="_blank"><img src="" alt="X" /></a>
+  </div>
+</footer>

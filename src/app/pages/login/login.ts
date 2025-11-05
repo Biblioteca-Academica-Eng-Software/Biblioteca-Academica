@@ -11,7 +11,7 @@ import { AuthService } from '../../service/auth.service';
   selector: 'app-login',
   imports: [MatButtonModule, FormsModule, HttpClientModule],
   templateUrl: './login.html',
-  providers: [ApiService],
+  providers: [AuthService],
   styleUrl: './login.css',
 })
 export class Login {
