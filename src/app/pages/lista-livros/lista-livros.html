@@ -21,14 +21,12 @@
 <section class="search-hero">
   <h1 class="page-title">LISTA DE LIVROS</h1>
   <div class="search-bar">
-    <input type="text" placeholder="Pesquisar..." />
-    <button>🔍</button>
+    <input type="text" placeholder="Pesquisar..." [(ngModel)]="filtro" />
+    <button (click)="loadBooks()">🔍</button>
   </div>
 </section>
 
-<app-modal-livros #modalLivros title="Exemplo de Modal">
-  <p>Esse é o conteúdo do modal! 🎉</p>
-</app-modal-livros>
+<app-modal-livros #modalLivros> </app-modal-livros>
 
 <section class="book-results" id="bookResults">
   @for (livro of livros; track $index) {

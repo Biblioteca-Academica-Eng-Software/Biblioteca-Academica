@@ -7,7 +7,7 @@
       <header class="card-header">Info Livros</header>
       <div class="card-conteudo">
         <div class="info-texto">
-          <h1 class="titulo-livro">Carreira Dev</h1>
+          <h1 class="titulo-livro">{{ livro.titulo }}</h1>
 
           <p class="sinopse">
             {{ livro.descricao }}
@@ -16,11 +16,12 @@
           <div class="detalhes">
             <p><strong>Autor:</strong> {{ livro.autor }}</p>
             <p><strong>Disciplina:</strong> {{ livro.disciplina }}</p>
-            <p><strong>Curso:</strong> {{ livro.curso }}</p>
+            <p><strong>Curso:</strong> {{ livro.nome }}</p>
           </div>
         </div>
 
         <div class="info-imagem-acao">
+          @if (livro.imagem) {
           <div class="imagem-container">
             <img
               src="placeholder-capa-carreira-dev.png"
@@ -29,8 +30,10 @@
             />
           </div>
 
+          }
+
           <button class="botao-reservar">RESERVAR</button>
-          <p class="restantes">10 Restantes</p>
+          <p class="restantes">{{ livro.disponiveis }} Restantes</p>
         </div>
       </div>
     </div>

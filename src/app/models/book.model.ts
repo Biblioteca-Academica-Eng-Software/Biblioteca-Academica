@@ -18,7 +18,7 @@ export interface BookCompleto {
   descricao: string;
   editora: string;
   imagem: string | null; // base64 ou null
-  curso: string;
+  nome: string;
   disciplina: string;
   exemplares: number;
   disponiveis: number;

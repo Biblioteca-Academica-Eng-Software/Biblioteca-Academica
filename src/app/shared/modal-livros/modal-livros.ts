@@ -12,7 +12,7 @@ export class ModalLivros {
   isOpen = false;
   livro: BookCompleto = {
     autor: '',
-    curso: '',
+    nome: '',
     disciplina: '',
     editora: '',
     imagem: '',
@@ -22,13 +22,27 @@ export class ModalLivros {
     descricao: '',
   };
 
-  resetarBook() {}
+  resetarBook() {
+    this.livro = {
+      autor: '',
+      nome: '',
+      disciplina: '',
+      editora: '',
+      imagem: '',
+      titulo: '',
+      disponiveis: 0,
+      exemplares: 0,
+      descricao: '',
+    };
+  }
 
-  open() {
+  open(livro: BookCompleto) {
+    this.livro = livro;
     this.isOpen = true;
   }
 
   close() {
     this.isOpen = false;
+    this.resetarBook();
   }
 }

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { User } from '../models/user.model';
-import { Book } from '../models/book.model';
+import { Book, BookCompleto } from '../models/book.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +21,9 @@ export class ApiService {
     return this.http.get<Book[]>(`${this.baseUrl}/books`, { params: { filtro: filtro } });
   }
 
+  getLivroById(id: number): Observable<BookCompleto> {
+    return this.http.get<BookCompleto>(`${this.baseUrl}/books/${id}`);
+  }
   // postCadastro(user: User): Observable<User> {
   //   return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
   // }

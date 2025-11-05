@@ -3,10 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../../models/book.model';
 import { ApiService } from '../../service/api.service';
 import { ModalLivros } from '../../shared/modal-livros/modal-livros';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista-livros',
-  imports: [ModalLivros],
+  imports: [ModalLivros, FormsModule, CommonModule],
   templateUrl: './lista-livros.html',
   styleUrl: './lista-livros.css',
 })
@@ -17,9 +19,9 @@ export class ListaLivros {
 
   constructor(private route: ActivatedRoute, private router: Router, private api: ApiService) {
     this.route.queryParams.subscribe((params) => {
-      params['filtro'] = this.filtro;
+      this.filtro = params['filtro'];
     });
-
+    this.filtro = this.filtro ? this.filtro : '';
     this.loadBooks();
   }
 
@@ -35,12 +37,15 @@ export class ListaLivros {
     });
   }
 
-  openModal() {
-    this.modal.open();
-  }
-
   infoLivro(id: number) {
-    console.log(id);
-    this.modal.open();
+    this.api.getLivroById(id).subscribe({
+      next: (data) => {
+        this.modal.open(data);
+      },
+      error: (err) => {
+        alert(`Falha ao carregar livro.`);
+        console.log(err);
+      },
+    });
   }
 }

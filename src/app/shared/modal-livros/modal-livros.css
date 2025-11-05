@@ -1,3 +1,5 @@
+/* Importar uma fonte similar à da imagem (como Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -54,9 +56,6 @@
   }
 }
 
-/* Importar uma fonte similar à da imagem (como Roboto) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
-
 /* Estilos de Reset e Base */
 * {
   margin: 0;
@@ -110,10 +109,10 @@ body {
 }
 
 .titulo-livro {
-  font-size: 2.5rem;
   font-weight: 900;
   margin-bottom: 20px;
   color: #000;
+  line-height: 30px;
 }
 
 .sinopse {

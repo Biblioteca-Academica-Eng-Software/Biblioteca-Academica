@@ -34,7 +34,7 @@ export class Cadastro {
       next: (data) => {
         console.log('Usuário criado:', data);
         alert('Usuário criado com sucesso!');
-        this.cadastro = { id: 0, adm: false, nome: '', usuario: '', senha: '' };
+        this.login();
       },
       error: (err) => {
         console.error('Erro ao criar usuário:', err);
