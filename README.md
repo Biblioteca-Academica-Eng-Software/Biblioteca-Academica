@@ -27,13 +27,13 @@ Siga o passo a passo abaixo para configurar o ambiente:
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
+git clone [https://github.com/seu-usuario/seu-projeto.git](https://github.com/Biblioteca-Academica-Eng-Software/Biblioteca-Academica.git)
 ```
 
 Acesse o diretório do projeto:
 
 ```bash
-cd seu-projeto
+cd Biblioteca-Academica
 ```
 
 Instale as dependências do projeto com o comando:
