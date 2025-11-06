@@ -107,6 +107,20 @@ body {
   flex: 2; /* Ocupa mais espaço que a coluna da direita */
   max-width: 600px;
 }
+/* 2. RESERVADO */
+.status-reserved,
+.status-late {
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 10px; /* Adiciona espaço entre a data e a barra de status */
+}
+
+.status-reserved {
+  background-color: #007bff;
+  color: white;
+}
 
 .titulo-livro {
   font-weight: 900;

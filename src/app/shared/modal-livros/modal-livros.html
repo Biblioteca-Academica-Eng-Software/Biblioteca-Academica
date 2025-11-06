@@ -30,9 +30,11 @@
             />
           </div>
 
-          }
-
+          } @if (status == 0) {
           <button class="botao-reservar" (click)="reservar(livro.id!)">RESERVAR</button>
+          } @else {
+          <div class="status-reserved">{{ statusList[status] }}</div>
+          }
           <p class="restantes">{{ livro.disponiveis }} Restantes</p>
         </div>
       </div>

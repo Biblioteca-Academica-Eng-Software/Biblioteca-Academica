@@ -3,7 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { User } from '../models/user.model';
-import { Book, BookCompleto } from '../models/book.model';
+import {
+  Book,
+  BookCompleto,
+  ResponseEmprestimo,
+  ResponseHistorico,
+  ResponseStatusLivro,
+} from '../models/book.model';
 
 @Injectable({
   providedIn: 'root',
@@ -25,12 +31,16 @@ export class ApiService {
     return this.http.get<BookCompleto>(`${this.baseUrl}/books/${id}`);
   }
 
-  getMeusEmprestimos(): Observable<BookCompleto> {
-    return this.http.get<BookCompleto>(`${this.baseUrl}/reserva/me`);
+  getMeusEmprestimos(): Observable<ResponseHistorico[]> {
+    return this.http.get<ResponseHistorico[]>(`${this.baseUrl}/reserva/me`);
   }
 
-  reservar(id: number): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/reserva`, id);
+  reservar(id: number): Observable<ResponseEmprestimo> {
+    return this.http.post<ResponseEmprestimo>(`${this.baseUrl}/reserva`, { book_id: id });
+  }
+
+  statusLivro(id: number): Observable<ResponseStatusLivro[]> {
+    return this.http.get<ResponseStatusLivro[]>(`${this.baseUrl}/reserva/status/${id}`);
   }
 
   // postCadastro(user: User): Observable<User> {

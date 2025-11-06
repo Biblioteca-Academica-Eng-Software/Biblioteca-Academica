@@ -129,6 +129,21 @@
   color: white;
 }
 
+.status-reserved,
+.status-devolvido,
+.status-late {
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 10px; /* Adiciona espaço entre a data e a barra de status */
+}
+
+.status-devolvido {
+  background-color: #4b5a6b;
+  color: white;
+}
+
 /* 3. ATRASADO */
 .status-late {
   background-color: #dc3545;

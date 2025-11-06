@@ -1,0 +1,132 @@
+/* ====== HERO ====== */
+.hero {
+  background: linear-gradient(180deg, #0052cc 0%, #007bff 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px 100px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* ====== FORMULÁRIO DE CONTATO ====== */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form .btn-enviar {
+  align-self: flex-end;
+  background-color: white;
+  color: #0052cc;
+  font-weight: bold;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.contact-form .btn-enviar:hover {
+  background-color: #f0f0f0;
+}
+
+/* ====== SEÇÃO FAQ ====== */
+.faq-section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-list {
+  flex: 1;
+  min-width: 300px;
+}
+
+.faq-list h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.faq-question {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.faq-question span {
+  font-size: 16px;
+  color: orange;
+  margin-right: 8px;
+}
+
+.faq-answer {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.faq-answer-indicator {
+  font-size: 14px;
+  color: #aaa;
+  font-weight: bold;
+}

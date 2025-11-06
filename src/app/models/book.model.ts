@@ -23,3 +23,35 @@ export interface BookCompleto {
   exemplares: number;
   disponiveis: number;
 }
+
+export interface ResponseEmprestimo {
+  message: string;
+  devolucao_prevista: string;
+}
+
+export interface ResponseStatusLivro {
+  id: number;
+  user_id: number;
+  book_id: number;
+  data_reserva: string;
+  data_devolucao: string;
+  status: number;
+}
+
+export interface ResponseHistorico {
+  id: number;
+  user_id: number;
+  book_id: number;
+  data_reserva: string;
+  data_devolucao: string;
+  status: number;
+  titulo: string;
+  autor: string;
+  editora: string;
+  imagem: any;
+  curso_id: number;
+  disciplina: string;
+  descricao: string;
+  exemplares: number;
+  disponiveis: number;
+}

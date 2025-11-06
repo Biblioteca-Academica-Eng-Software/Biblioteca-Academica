@@ -3,47 +3,40 @@
 </section>
 
 <section class="loan-container">
+  @for (livro of emprestimos; track livro.id) {
   <div class="loan-card">
     <div class="loan-info">
+      @if (livro.imagem) {
       <img src="fisica.jpg" alt="Física I" />
-      <h3>Física I</h3>
-      <p>Introdução aos conceitos básicos da física aplicada.</p>
+      }
+      <h3>{{ livro.autor }}</h3>
+      <p>{{ livro.descricao }}</p>
     </div>
+    @if (livro.status == 1) {
+    <div class="status-reserved">RESERVADO</div>
 
+    } @else if (livro.status == 2) {
     <div class="status-section status-loan">
       <h4>DATA LIMITE:</h4>
-      <div class="date">22/11/2025</div>
+      <div class="date">{{ livro.data_devolucao | date : 'dd/MM/yyyy HH:mm' }}</div>
       <div class="period-label">EM PERÍODO</div>
       <button class="btn-renovar">RENOVAR</button>
     </div>
-  </div>
-
-  <div class="loan-card">
-    <div class="loan-info">
-      <img src="javascript.jpg" alt="JavaScript - Iniciante" />
-      <h3>JavaScript - Iniciante</h3>
-      <p>Introdução à lógica e fundamentos da programação.</p>
-    </div>
-    <div class="status-section status-loan">
-      <h4>DATA LIMITE PARA RETIRADA:</h4>
-      <div class="date">07/11/2025</div>
-    </div>
-    <div class="status-reserved">RESERVADO</div>
-  </div>
-
-  <div class="loan-card">
-    <div class="loan-info">
-      <img src="quimica I.jpg" alt="Química I" />
-      <h3>Química I</h3>
-      <p>Fundamentos da química e suas aplicações práticas.</p>
-    </div>
+    } @else if (livro.status == 3) {
     <div class="status-section status-loan">
       <h4>DATA LIMITE PARA ENTREGA:</h4>
-      <div class="date">31/10/2025</div>
+      <div class="date">{{ livro.data_devolucao | date : 'dd/MM/yyyy HH:mm' }}</div>
       <div class="period-label" style="color: #dc3545; font-weight: bold">
         Sujeito a penalidades
       </div>
     </div>
     <div class="status-late">ATRASADO</div>
+    } @else if (livro.status == 0) {
+    <div class="date">{{ livro.data_devolucao | date : 'dd/MM/yyyy HH:mm' }}</div>
+    <div class="status-devolvido">DEVOLVIDO</div>
+
+    }
   </div>
+
+  }
 </section>
